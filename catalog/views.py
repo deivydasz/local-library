@@ -26,3 +26,20 @@ def index(request):
 			'num_genres':num_genres, 'num_languages':num_languages, 'num_books_ender':num_books_ender}
 	)
 
+from django.views import generic
+
+class BookListView(generic.ListView):
+	model = Book
+	paginate_by = 5
+
+
+class BookDetailView(generic.DetailView):
+	model = Book
+
+class AuthorListView(generic.ListView):
+	model = Author
+
+
+class AuthorDetailView(generic.DetailView):
+	model = Author
+
