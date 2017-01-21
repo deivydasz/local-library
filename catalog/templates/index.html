@@ -20,4 +20,6 @@
     <li><strong>Ender Books:</strong> {{ num_books_ender }}</li>
   </ul>
 
+<p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+
 {% endblock %}
