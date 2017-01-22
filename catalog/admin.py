@@ -35,15 +35,15 @@ admin.site.register(Book, BookAdmin)
 # Register the Admin classes for BookInstance using the decorator
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
+	list_display = ('book', 'status', 'borrower', 'due_back', 'id')
 	list_filter = ('status', 'due_back')
-	list_display = ('book', 'due_back', 'id')
 
 	fieldsets = (
 		(None, {
 			'fields': ('book', 'imprint', 'id')
 		}),
 		('Availability', {
-			'fields': ('status', "due_back")
+			'fields': ('status', "due_back", 'borrower')
 		}),	
 	)
 
